@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41d83a33-30cc-4bbe-a58a-eb0a2b5791c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collection_frameworks/list_interface/StackExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/collection_frameworks/list_interface/StackExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ArrayListExample.executor": "Run",
     "Application.Arrays_Demo_1D.executor": "Run",
     "Application.NonPrimitiveDataType.executor": "Run",
     "Application.OperatorsDemo.executor": "Run",
