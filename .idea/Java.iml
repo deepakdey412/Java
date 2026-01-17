@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/data_types" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/loops" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/switch-statement" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
