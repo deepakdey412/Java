@@ -1,0 +1,138 @@
+## Lambda Expression — Quick Notes (Java)
+
+### 1) What is a Lambda Expression?
+
+A **Lambda Expression** is a short way to implement a method of a **functional interface** (an interface having only one abstract method).
+
+It helps reduce boilerplate code, especially when using anonymous classes.
+
+---
+
+### 2) Why Lambda was introduced?
+
+Before lambda, we needed anonymous classes to implement interfaces, which required more code.
+
+Lambda expressions:
+
+* Reduce code length
+* Improve readability
+* Make functional-style programming easier
+* Are widely used with collections and streams
+
+---
+
+### 3) Basic Syntax
+
+```java
+(parameters) -> { method body }
+```
+
+Examples:
+
+**Single parameter**
+
+```java
+x -> x * x
+```
+
+**Multiple parameters**
+
+```java
+(a, b) -> a + b
+```
+
+**With method body**
+
+```java
+(a, b) -> {
+    int sum = a + b;
+    return sum;
+}
+```
+
+---
+
+### 4) Functional Interface
+
+A functional interface has **only one abstract method**.
+
+Example:
+
+```java
+interface Calculator {
+    int add(int a, int b);
+}
+```
+
+Lambda implementation:
+
+```java
+Calculator c = (a, b) -> a + b;
+System.out.println(c.add(5, 3));
+```
+
+---
+
+### 5) Lambda vs Anonymous Class
+
+Before:
+
+```java
+Calculator c = new Calculator() {
+    public int add(int a, int b) {
+        return a + b;
+    }
+};
+```
+
+Using Lambda:
+
+```java
+Calculator c = (a, b) -> a + b;
+```
+
+Cleaner and shorter.
+
+---
+
+### 6) Common Use Cases
+
+Lambda is mostly used with:
+
+* Collections sorting
+* Streams API
+* Runnable threads
+* Event handling
+
+Example sorting:
+
+```java
+list.sort((a, b) -> a - b);
+```
+
+---
+
+### 7) Important Rules
+
+✅ Interface must have one abstract method
+✅ Parameters type can be omitted
+✅ Curly braces optional for single statement
+✅ `return` optional if single expression
+
+---
+
+### 8) When NOT to use Lambda
+
+Avoid lambda if:
+
+* Logic is very large
+* Code becomes hard to read
+
+---
+
+### One-Line Interview Definition
+
+**Lambda expression is a concise way to represent an implementation of a functional interface in Java.**
+
+---
+
