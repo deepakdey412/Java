@@ -40,7 +40,7 @@ class Test implements MyInterfaceOne {
 }
 
 /* ================= MAIN CLASS ================= */
-public class Demo implements MyInterfaceOne {
+public class InterfaceProblemDemo implements MyInterfaceOne {
 
     @Override
     public void methodOne() {
@@ -61,7 +61,7 @@ public class Demo implements MyInterfaceOne {
     public static void main(String[] args) {
 
         // Object of Demo class
-        Demo demo = new Demo();
+        InterfaceProblemDemo demo = new InterfaceProblemDemo();
         demo.methodOne();
         demo.methodTwo();
         demo.methodThree(); // Call the overriden default method
