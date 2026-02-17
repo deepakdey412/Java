@@ -1,14 +1,30 @@
 
-// Normal interface implements all its methods in the implemented class
-interface MyInterfaceOne{
-    void methodOne();// this is the abstract method
-    void methodTwo();
-//    void methodThree(); now here is the problem, i want to inplement the m3 in Demo class but not in the Test class , but as per the interface rule in java , we need to implement all the methods in the interface in the implemented classes
+// * Demonstration of a normal interface and why default methods are useful.
 
-    // to solve this problem, java 1.8 introduced the Default mehtod and static method
+/* ================= INTERFACE ================= */
+interface MyInterfaceOne {
+
+    // Abstract methods.
+    // Every implementing class MUST implement all abstract methods.
+    void methodOne();
+    void methodTwo();
+
+    /*
+     * Suppose we want to add another method, but we do NOT want every implementing class to implement it.
+     *
+     * Java 8 solved this problem using DEFAULT and STATIC methods.
+     */
+
+    // Default method (optional to override)
+    default void methodThree() {
+        System.out.println("Default implementation of methodThree");
+    }
 }
 
-class Test implements MyInterfaceOne{
+/* ================= IMPLEMENTATION CLASS: Test ================= */
+class Test implements MyInterfaceOne {
+
+    // Must implement abstract methods
     @Override
     public void methodOne() {
         System.out.println("Test methodOne");
@@ -18,8 +34,13 @@ class Test implements MyInterfaceOne{
     public void methodTwo() {
         System.out.println("Test methodTwo");
     }
+
+    // methodThree() is NOT overridden,
+    // so default implementation will be used.
 }
-public class Demo implements MyInterfaceOne{
+
+/* ================= MAIN CLASS ================= */
+public class Demo implements MyInterfaceOne {
 
     @Override
     public void methodOne() {
@@ -31,16 +52,26 @@ public class Demo implements MyInterfaceOne{
         System.out.println("Call abstract methodTwo");
     }
 
+    // Only this class overrides methodThree()
+    @Override
+    public void methodThree() {
+        System.out.println("Custom implementation of methodThree in Demo");
+    }
+
     public static void main(String[] args) {
 
+        // Object of Demo class
         Demo demo = new Demo();
         demo.methodOne();
         demo.methodTwo();
+        demo.methodThree(); // Call the overriden default method
 
+        System.out.println();
+
+        // Object of Test class
         Test test = new Test();
         test.methodOne();
         test.methodTwo();
-
+        test.methodThree(); // uses default method
     }
-
 }

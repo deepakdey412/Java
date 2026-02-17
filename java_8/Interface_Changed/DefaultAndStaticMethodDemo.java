@@ -41,7 +41,7 @@ class Test02 implements MyInterface01 {
 }
 
 /* ================= MAIN CLASS ================= */
-public class StaticMethodDemo implements MyInterface01 {
+public class DefaultAndStaticMethodDemo implements MyInterface01 {
 
     @Override
     public void m1() {
@@ -51,7 +51,7 @@ public class StaticMethodDemo implements MyInterface01 {
     public static void main(String[] args) {
 
         // Object of main class
-        StaticMethodDemo obj1 = new StaticMethodDemo();
+        DefaultAndStaticMethodDemo obj1 = new DefaultAndStaticMethodDemo();
         obj1.m1();  // Calls overridden method
         obj1.m2();  // Calls default interface method
 
